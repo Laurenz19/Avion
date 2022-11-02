@@ -1,0 +1,21 @@
+.logoApp {
+    float: left;
+    width: 15em;
+}
+
+.logoApp img {
+    height: 45px;
+}
+
+#auth {
+    /*background: #3ccc95;*/
+    background: linear-gradient(to bottom, #054a53, #360a3f);
+    min-height: 100vh;
+    padding-top: 100px;
+    /* background-image: url(../images/background/auth.jpg);*/
+}
+
+#avion {
+    width: 15em;
+    height: 100px;
+}

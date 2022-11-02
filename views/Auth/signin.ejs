@@ -1,0 +1,25 @@
+<%- include('./include/head.ejs') %>
+    <form class="login-form" action="/login" method="post">
+        <div class="login-wrap">
+            <div class="text-center mb-5">
+                <img src="/img/logo/avion.png" height="50" class='mb-4'>
+                <h3>S'authentifier</h3>
+                <p>Authentification requis pour se connecter.</p>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                <input type="email" class="form-control" placeholder="Email" name="email" autofocus>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input type="password" class="form-control" placeholder="Mot de Passe" name="password">
+            </div>
+
+            <label class="checkbox">
+                <span class="pull-right"> <a href="/register">Je n'ai pas de compte</a></span>
+            </label>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Se Connecter</button>
+
+        </div>
+    </form>
+    <%- include('./include/foot.ejs') %>

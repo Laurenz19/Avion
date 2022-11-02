@@ -1,0 +1,61 @@
+<%- include('./include/head.ejs') %>
+    <form class="login-form" action="/register" method="POST">
+        <div class="login-wrap">
+            <div class="text-center mb-5">
+                <img src="/img/logo/avion.png" height="50" class='mb-4'>
+                <h3>S'authentifier</h3>
+                <p>Veuillez completer le formulaire pour la création de votre compte .</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="first-name-column">Nom</label>
+                        <input type="text" id="first-name-column" class="form-control" name="name" value="<%= typeof name != 'undefined' ? name: ''%>">
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="form-group">
+                        <label for="email-id-column">Email</label>
+                        <input type="email" id="email-id-column" class="form-control" name="email" value="<%= typeof email != 'undefined' ? email: ''%>">
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="form-group position-relative">
+                        <div class="clearfix">
+                            <label for="password">Mot de passe</label>
+                        </div>
+                        <div class="position-relative">
+                            <input type="password" class="form-control" name="password" value="<%= typeof password != 'undefined' ? password: ''%>">
+                            <div class="form-control-icon">
+                                <i data-feather="lock"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="form-group position-relative has-icon-left">
+                        <div class="clearfix">
+                            <label for="password">Confirmer votre mot de passe</label>
+                        </div>
+                        <div class="position-relative">
+                            <input type="password" class="form-control" name="password2" value="<%= typeof password2 != 'undefined' ? password2: ''%>">
+                            <div class="form-control-icon">
+                                <i data-feather="lock"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </diV>
+
+
+            <label class="checkbox">
+                <span class="pull-right"> <a href="/login">J'ai déjà un compte</a></span>
+            </label>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Créer un compte</button>
+
+
+
+        </div>
+    </form>
+    <%- include('./include/foot.ejs') %>

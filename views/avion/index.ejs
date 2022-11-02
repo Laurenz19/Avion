@@ -1,0 +1,98 @@
+<%- include ('../include/headPage.ejs') %>
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa-files-o"></i>
+                    <%= title %>
+                </h3>
+
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="/home">Acceuil</a></li>
+                    <li><i class="icon_document_alt"></i>
+                        <%= field %>
+                    </li>
+                    <li><i class="fa fa-files-o"></i>Liste des avions</li>
+                </ol>
+                <div class="col-sm-11">
+                </div>
+
+                <a class="btn btn-primary col-sm-1" href="new_avion"><i class="icon_plus_alt2"></i></a>
+
+            </div>
+        </div>
+        <!-- Form validations -->
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Liste des Avions disponibles
+                    </header>
+                    <div class="panel-body">
+                        <table id="basic-datatables" class="display table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>N° de l'avion</th>
+                                    <th>Design</th>
+                                    <th>Nombre de place</th>
+                                    <th>Vol</th>
+                                    <th>Date de Départ</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>N° de l'avion</th>
+                                    <th>Design</th>
+                                    <th>Nombre de place</th>
+                                    <th>Vol</th>
+                                    <th>Date de Départ</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </tfoot>
+                            <tbody>
+                                <% if (avions.length>0) { %>
+                                    <% avions.forEach(avion => { %>
+                                        <tr>
+                                            <td>
+                                                <%= avion.numAvion %>
+                                            </td>
+                                            <td>
+                                                <%= avion.design %>
+                                            </td>
+                                            <td>
+                                                <%= avion.nbPlace %>
+                                            </td>
+                                            <td>
+                                                <% if (vols.length>0) { %>
+                                                    <% vols.forEach(vol => { %>
+                                                        <% if (vol.id==avion.numVol) { %>
+                                                            <%= vol.villeDepart %> -
+                                                                <%=vol.villeArrivee  %>
+                                                                    <% } %>
+                                                                        <% }) %>
+                                                                            <% } %>
+                                            </td>
+                                            <td>
+                                                <%= moment(avion.dateDepart).format('DD/MM/YYYY')%>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-info" href="/detail_avion/<%= avion.id %>">voir</a>
+                                                <a class="btn btn-success" href="/update_avion/<%= avion.id %>"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="/delete_avion/<%= avion.id %>"><i class="icon_close_alt2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+
+                                            <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+            </div>
+            </section>
+        </div>
+        <!-- page end-->
+    </section>
+
+    <%- include ('../include/footPage.ejs') %>

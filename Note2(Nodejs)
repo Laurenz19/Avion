@@ -1,0 +1,56 @@
+Learn NodeJs deeply:
+
+Chap1: Needed
+ a) Creating Server:
+    Basic:
+    /* Import all packages */
+    const express = require('express');
+
+
+    const app = express();
+    const PORT = 8080;
+    app.get('/', (req, res) => {
+        res.send("Hello World");
+    })
+
+    app.listen(PORT, (err) => {
+        if (err) throw err;
+        console.log(`Server running on http://localhost:${PORT}`)
+    })
+
+    To run the server use node server or npm start by using nodemon command
+
+ b) Async:
+    Syntax: (each callback must be written with the syntax below)
+    function callback(err, result [, arg1,...,argn])
+    => this way we are foced to return the error first and can't ignore handling them later
+ 
+ c) Async and await: Allows us to return something and use them outside the block where they was declared
+ d) callback functions in Javascript:
+    function getSyncMessage(cb) {
+        cb("Hello World")
+    }
+    getSyncMessage((message) => console.log(message));
+
+   (output) => As result, that will print Hello World in the terminal
+
+Chap2: Models, Routes, Controllers, Services Structure for expressJs:
+ Models: the schema definition of Model
+ Routes: the API Routes map to the Controller
+ Controllers: handles all the logic behind validating request parameters, query, Sending Response with correct Code 
+ Services: Contains the database queries and returning object or throwing error
+    
+    a) Some Examples: (Later) 90
+    b) Routing Ajax request with expressJs: 91
+
+Chap3: Passport Integration:
+ Password must be hashed, a simple way to secure passwords using NodeJs is to use bcript-nodejs module
+ 
+ a) Getting Started:
+ Passport must be initialized usign passport.initialize() middleware
+ To use login session passport.session() middleware is required
+ NB: passport.serialize() and passport.deserialize() methods must be defined
+
+
+
+

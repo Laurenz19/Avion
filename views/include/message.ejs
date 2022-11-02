@@ -1,0 +1,12 @@
+<% if (errors.length > 0) { %>
+
+    <% errors.forEach(error => { %>
+        <div class="alert alert-block alert-danger fade in">
+            <button data-dismiss="alert" class="close close-sm" type="button">
+                                <i class="icon-remove"></i>
+                            </button>
+            <strong>Oh!</strong>
+            <%= error.message%>
+        </div>
+        <% }) %>
+            <% } %>
